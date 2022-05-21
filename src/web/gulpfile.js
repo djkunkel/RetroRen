@@ -1,12 +1,12 @@
 var gulp = require('gulp'),
-    sass = require('gulp-sass')
-    cssmin = require("gulp-cssmin")
+    sass = require('gulp-sass')(require('sass'))
+    csso = require("gulp-csso")
     rename = require("gulp-rename");
 
 gulp.task('min', function (done) {
     gulp.src('assets/scss/style.scss')
         .pipe(sass().on('error', sass.logError))
-        .pipe(cssmin())
+        .pipe(csso())
         .pipe(rename({
             suffix: ".min"
         }))
