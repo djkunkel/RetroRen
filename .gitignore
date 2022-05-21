@@ -452,3 +452,8 @@ $RECYCLE.BIN/
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
+
+
+#retroren specifics
+/src/web/wwwroot/assets/uploads/*
+/src/web/wwwroot/db/*

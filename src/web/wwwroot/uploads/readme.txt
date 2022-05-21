@@ -1,0 +1,1 @@
+﻿This folder stores assets. Do not check any assets in here.
