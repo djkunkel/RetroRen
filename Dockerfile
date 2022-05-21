@@ -4,7 +4,7 @@ WORKDIR /bld
 
 # copy csproj and restore as distinct layers
 COPY src/*.sln .
-COPY src/web/*.csproj ./web
+COPY src/web/*.csproj ./web/
 RUN dotnet restore
 
 # copy everything else and build app
