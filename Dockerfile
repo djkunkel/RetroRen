@@ -4,12 +4,12 @@ WORKDIR /bld
 
 # copy csproj and restore as distinct layers
 COPY src/*.sln .
-COPY src/www/*.csproj ./www
+COPY src/web/*.csproj ./web
 RUN dotnet restore
 
 # copy everything else and build app
-COPY src/www/. ./www/
-WORKDIR /bld/www
+COPY src/web/. ./web/
+WORKDIR /bld/web
 RUN dotnet publish -c release -o /app --no-restore
 
 # final stage/image
