@@ -16,6 +16,7 @@ RUN dotnet publish -c release -o /app --no-restore
 FROM mcr.microsoft.com/dotnet/aspnet:6.0
 WORKDIR /app
 COPY --from=build /app ./
-COPY --from=build /bld/web/db ./db
+#support seeding on empty database
+COPY --from=build /bld/web/seed ./seed
 EXPOSE 80
 ENTRYPOINT ["dotnet", "RetroRen.dll"]
