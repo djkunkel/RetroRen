@@ -18,6 +18,5 @@ WORKDIR /app
 COPY --from=build /app ./
 #support seeding on empty database
 COPY --from=build /bld/web/seed ./seed
-#RUN touch ./db/piranha.db
 EXPOSE 80
 ENTRYPOINT ["dotnet", "RetroRen.dll"]

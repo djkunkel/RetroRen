@@ -455,5 +455,5 @@ $RECYCLE.BIN/
 
 
 #retroren specifics
-/src/web/wwwroot/assets/uploads/*
-/src/web/wwwroot/db/*
+src/web/wwwroot/uploads/
+src/web/db/*
