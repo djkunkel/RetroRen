@@ -4,6 +4,7 @@ using Piranha.AttributeBuilder;
 using Piranha.AspNetCore.Identity.SQLite;
 using Piranha.Data.EF.SQLite;
 using Piranha.Manager.Editor;
+using Microsoft.AspNetCore.DataProtection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -46,6 +47,15 @@ builder.AddPiranha(options =>
     options.LoginUrl = "login";
      */
 });
+
+//add protection keys in production
+if (builder.Environment.IsProduction())
+{
+
+    builder.Services.AddDataProtection()
+                    .SetApplicationName("retroren")
+                    .PersistKeysToFileSystem(new System.IO.DirectoryInfo(@"db"));
+}
 
 var app = builder.Build();
 
