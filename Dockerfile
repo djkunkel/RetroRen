@@ -14,6 +14,7 @@ RUN dotnet publish -c release -o /app --no-restore
 
 # final stage/image
 FROM mcr.microsoft.com/dotnet/aspnet:6.0
+RUN apt-get update
 RUN apt-get install -y sqlite3 #support backup inside container
 WORKDIR /app
 COPY --from=build /app ./
