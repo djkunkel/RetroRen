@@ -5,6 +5,7 @@ using Piranha.AspNetCore.Identity.SQLite;
 using Piranha.Data.EF.SQLite;
 using Piranha.Manager.Editor;
 using Microsoft.AspNetCore.DataProtection;
+using RetroRen.Custom.Blocks;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -68,6 +69,11 @@ app.UsePiranha(options =>
 {
     // Initialize Piranha
     App.Init(options.Api);
+
+    //add custom blocks
+    App.Blocks.Register<RawHtmlBlock>();
+    App.Modules.Manager().Scripts.Add("~/custom-blocks.js");
+    App.Modules.Manager().Styles.Add("~/custom-blocks.css");
 
     // Build content types
     new ContentTypeBuilder(options.Api)
