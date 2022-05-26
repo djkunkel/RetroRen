@@ -1,0 +1,26 @@
+﻿.embed-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+}
+
+.embed-container iframe, .embed-container object, .embed-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.youtube-block textarea {
+    background: #043143;
+    color: white;
+    width: 100%;
+    font-size: 0.875rem;
+    font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    border: medium none;
+    padding: 0.75rem 1rem;
+    border-radius: 0.25rem;
+}

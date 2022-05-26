@@ -75,6 +75,10 @@ app.UsePiranha(options =>
     App.Modules.Manager().Scripts.Add("~/custom-blocks.js");
     App.Modules.Manager().Styles.Add("~/custom-blocks.css");
 
+    App.Blocks.Register<YoutubeEmbedBlock>();
+    App.Modules.Manager().Scripts.Add("~/youtube-blocks.js");
+    App.Modules.Manager().Styles.Add("~/youtube-blocks.css");
+
     // Build content types
     new ContentTypeBuilder(options.Api)
         .AddAssembly(typeof(Program).Assembly)
